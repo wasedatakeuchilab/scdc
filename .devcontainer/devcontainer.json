@@ -1,0 +1,43 @@
+{
+  "name": "Python 3",
+  "dockerComposeFile": "compose.yml",
+  "service": "main",
+  "workspaceFolder": "/workspaces/main",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
+      "packages": "bash-completion"
+    },
+    "ghcr.io/devcontainers-contrib/features/hatch:2": {},
+    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+    "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+      "installCudnn": true,
+      "installToolkit": true,
+      "cudaVersion": "12.2",
+      "cudnnVersion": "8.9.5.29"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "esbenp.prettier-vscode",
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "jock.svg",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ninoseki.vscode-mogami",
+        "redhat.vscode-yaml",
+        "tamasfe.even-better-toml",
+        "timonwong.shellcheck",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+  "postCreateCommand": {
+    "install pre-commit": "pre-commit install",
+    "install pip-completion": "echo 'source <(pip completion --bash)' >> ~/.bashrc",
+    "create hatch env": "bash .devcontainer/create-hatch-env.sh"
+  }
+}
