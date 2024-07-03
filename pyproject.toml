@@ -18,7 +18,7 @@ dependencies = [
   "pandas==2.2.2",
   "pandas-stubs==2.2.2.240603",
   "scipy==1.14.0",
-  "tensorflow==2.15.0",
+  "tensorflow==2.16.2",
 ]
 dynamic = ["version"]
 
